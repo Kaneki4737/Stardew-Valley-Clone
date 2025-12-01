@@ -25,7 +25,7 @@ def main():
 
     # Inventory with seeds
     # 8 slots to match inventory_bar.png; enlarge slots for better visibility
-    inventory = Inventory(slot_count=8, slot_size=96)
+    inventory = Inventory(slot_count=8, slot_size=64)
     # Start with seeds but hide numeric counts in UI
     inventory.add_item("carrot_seed", 5)
     inventory.add_item("tomato_seed", 5)
@@ -82,10 +82,10 @@ def main():
 
         # Player input and movement
         keys = pygame.key.get_pressed()
-        player.handle_input(keys, dt)  # ✅ Pass dt here
+        player.handle_input(keys, dt)  #Pass dt here
 
         # Update player with delta time
-        player.update(dt)  # ✅ Updated for dt
+        player.update(dt)  # Updated for dt
 
         # Update camera to follow player
         camera.update(player.rect)

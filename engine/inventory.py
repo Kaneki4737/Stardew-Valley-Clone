@@ -116,14 +116,14 @@ class Inventory:
                 bw, bh = self.bar_image.get_width(), self.bar_image.get_height()
                 if bh > 0 and bw > 0:
                     # Choose a modest bar height tied to slot size so it stays near the bottom
-                    target_bar_h = max(24, int(self.slot_size * 1.6))
+                    target_bar_h = 400
                     scale = target_bar_h / bh
-                    scaled_bar_h = max(1, int(bh * scale))
-                    scaled_bar_w = max(1, int(bw * scale))
+                    scaled_bar_h = int(bh * scale)
+                    scaled_bar_w = bw
                     scaled_bar = pygame.transform.smoothscale(self.bar_image, (scaled_bar_w, scaled_bar_h))
                     start_x = (screen_width - scaled_bar_w) // 2
                     # place bar flush to bottom using its true height with a small margin
-                    y_base = screen_height - scaled_bar_h - 6
+                    y_base = 350
                     surface.blit(scaled_bar, (start_x, y_base))
             except Exception:
                 scaled_bar = None
